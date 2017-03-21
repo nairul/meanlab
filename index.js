@@ -7,7 +7,7 @@ var app     = express();
 
 var Show = mongoose.model("Show");
 
-app.set("port", process.env.PORT || 3002);
+app.set("port", process.env.PORT || 3001);
 app.set("view engine", "hbs");
 app.engine(".hbs", hbs({
   extname:        ".hbs",
