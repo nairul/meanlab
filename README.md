@@ -1,5 +1,5 @@
 # Vote Funny (meanLab)
-Rodney Curl (https://github.com/rodneycurl) and Adam Whitehurst (https://github.com/nairul) MEAN Lab
+Rodney Curl (https://github.com/rodneycurl) and Adam Whitehurst (https://github.com/nairul) MEAN Lab.
 
 We decided to produce a website where fans can upload and vote on their favorite Comedy Central show to prove which one is the funniest of them all.
 
