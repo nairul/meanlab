@@ -1,7 +1,8 @@
 angular
   .module("voteFunny", [
     "ui.router",
-    "ngResource"
+    "ngResource",
+    "ngSanitize"
   ])
   .config([
     "$stateProvider",
@@ -17,6 +18,7 @@ angular
     indexController
   ])
   .controller("showCtrl", [
+    "$state",
     "$stateParams",
     "Show",
     showController
@@ -54,9 +56,14 @@ angular
     }
   }
 
-  function showController ($stateParams, Show) {
+  function showController ($state, $stateParams, Show) {
     this.show = Show.get({name: $stateParams.name})
     this.update = function () {
       this.show.$update({name: $stateParams.name})
+    }
+    this.destroy = function () {
+    this.show.$delete({name: $stateParams.name}).then(function(){
+        $state.go("index")
+      })
     }
   }

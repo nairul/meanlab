@@ -1,11 +1,13 @@
 <h2><a href="{{vm.show.url}}">{{vm.show.name}}</a></h2>
 <img src='{{vm.show.image}}'>
 <iframe width="560" height="315" src="{{vm.show.video}}" frameborder="0" allowfullscreen></iframe>
+<p>Votes: {{vm.show.vote}}</p>
 
 <div class="edit-show">
-  <input type="text" ng-model="vm.newShow.name" placeholder="Name" />
-  <input type="text" ng-model="vm.newShow.url" placeholder="URL" />
-  <input type="text" ng-model="vm.newShow.image" placeholder="Image URL" />
-  <input type="text" ng-model="vm.newShow.video" placeholder="Video URL" />
+  <input type="text" ng-model="vm.show.name" placeholder="Name" />
+  <input type="text" ng-model="vm.show.url" placeholder="URL" />
+  <input type="text" ng-model="vm.show.image" placeholder="Image URL" />
+  <input type="text" ng-model="vm.show.video" placeholder="Video URL" />
   <button data-ng-click="vm.update()">Edit Show</button>
+  <button data-ng-click="vm.destroy()">Delete Show</button>
 </div>
