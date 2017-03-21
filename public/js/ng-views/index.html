@@ -1,11 +1,9 @@
 <h2>{{vm.shows.length}} Shows</h2>
 
-<div class="shows">
-  <h3 data-ng-repeat="show in vm.shows">
+<div class="shows" data-ng-repeat="show in vm.shows | orderBy : '-vote'">
     <a data-ui-sref="show({name: show.name})">{{show.name}}</a>
-  </h2>
 </div>
-
+<br>
 <form ng-submit="vm.create()">
   <input type="text" ng-model="vm.newShow.name" placeholder="Name" />
   <input type="text" ng-model="vm.newShow.url" placeholder="URL" />
