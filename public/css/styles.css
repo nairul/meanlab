@@ -30,7 +30,7 @@ p {
   font-family: sans-serif;
   font-size: 24px;
   font-weight: bold;
-  margin: 20px;
+  margin: 20px 40px 10px 40px;
 }
 
 a {
@@ -65,13 +65,13 @@ a.ng-binding {
 }*/
 
 form {
-  margin: 20px;
+  margin: 4px 20px;
 }
 
 input[type=text] {
-    width: 100%;
+    width: 60%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 8px 20px 20px 20px;
     box-sizing: border-box;
 }
 
@@ -84,7 +84,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 2px 20px 20px;
   cursor: pointer;
 }
 
