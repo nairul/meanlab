@@ -1,1 +1,15 @@
-<h1>Index</h1>
+<h2>{{vm.shows.length}} Shows</h2>
+
+<div class="shows">
+  <h3 data-ng-repeat="show in vm.shows">
+    <a data-ui-sref="show({name: show.name})">{{show.name}}</a>
+  </h2>
+</div>
+
+<form ng-submit="vm.create()">
+  <input type="text" ng-model="vm.newShow.name" placeholder="Name" />
+  <input type="text" ng-model="vm.newShow.url" placeholder="URL" />
+  <input type="text" ng-model="vm.newShow.image" placeholder="Image URL" />
+  <input type="text" ng-model="vm.newShow.video" placeholder="Video URL" />
+  <button type="submit">Create New Show</button>
+</form>
