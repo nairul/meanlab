@@ -10,11 +10,11 @@
     </div>
 </div>
 
-<h2><a href="{{vm.show.url}}">{{vm.show.name}}</a></h2>
+<h2 style="background-image:url({{vm.show.image}})"><a href="{{vm.show.url}}">{{vm.show.name}}</a></h2>
 
 <div class="showpage">
-  <img src='{{vm.show.image}}'>
-  <iframe width="560" height="350" src="{{vm.show.video}}" frameborder="0" allowfullscreen></iframe>
+  <!-- <img src='{{vm.show.image}}'> -->
+  <iframe width="720" height="380" src="{{vm.show.video}}" frameborder="0" allowfullscreen></iframe>
   <p>Votes: {{vm.show.vote}}</p>
   <button data-ng-click="vm.vote()">Vote!</button>
 </div>

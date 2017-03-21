@@ -44,7 +44,7 @@ a {
 }
 
 a.ng-binding {
-  font-family: sans-serif;
+  font-family: BrandonTextBold, Helvetica, Arial, sans-serif;
   font-size: 100px;
   font-weight: bold;
   color: #DCE631;
@@ -53,8 +53,13 @@ a.ng-binding {
   background: black;
   padding: 20px;
   transform: scale(2, 2)
-
 }
+
+/*attempt at adding customized font
+@font-face {
+  font-family: BrandonTextBold;
+  src:url();
+}*/
 
 /*a.ng-binding div {
 }*/
@@ -95,7 +100,7 @@ img.ng-scope {
 }
 
 iframe {
-  margin: 0;
+  margin: 20px;
   padding: 0;
 }
 
@@ -105,4 +110,11 @@ div.showpage {
 
 li {
   display: inline;
+}
+
+h2.ng-scope {
+  margin: 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px;
 }
