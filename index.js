@@ -16,6 +16,7 @@ app.engine(".hbs", hbs({
   defaultLayout:  "layout-main"
 }));
 app.use("/assets", express.static("public"));
+app.use("/scripts", express.static("node_modules"));
 app.use(parser.json({extended: true}));
 
 app.get("/", function(req, res){

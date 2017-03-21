@@ -1,21 +1,32 @@
+(function() {
+
+"use strict";
+
 angular
   .module("voteFunny", [
+    "auth0.lock",
+    "angular-jwt",
     "ui.router",
-    "ngResource",
-    "ngSanitize"
+    "ngResource"
   ])
   .config([
     "$stateProvider",
     Router
   ])
   .config(
-    function($sceDelegateProvider){
+    function($sceDelegateProvider, lockProvider, $urlRouterProvider){
        $sceDelegateProvider.resourceUrlWhitelist([
-    // Allow same origin resource loads.
     'self',
-    // Allow loading from our assets domain.  Notice the difference between * and **.
     'https://www.youtube.com/**'
-  ]);
+    ]);
+    lockProvider.init({
+      clientID: 'NmjdW5FKcfXy2nH4U7tZTelzyeT3IEz7',
+      domain: 'gabook.auth0.com',
+      options: {
+        _idTokenVerification: false
+      }
+      });
+    $urlRouterProvider.otherwise('/shows');
     }
   )
   .factory("Show", [
@@ -25,6 +36,7 @@ angular
   .controller("indexCtrl", [
     "$state",
     "Show",
+    "authService",
     indexController
   ])
   .controller("showCtrl", [
@@ -34,7 +46,7 @@ angular
     showController
   ])
 
-  function Router ($stateProvider) {
+  function Router ($stateProvider, lockProvider, $urlRouterProivder) {
     $stateProvider
       .state("index", {
         url: "/shows",
@@ -48,6 +60,7 @@ angular
         controller: "showCtrl",
         controllerAs: "vm"
       })
+  
   }
 
   function Show ($resource) {
@@ -56,7 +69,7 @@ angular
     });
   }
 
-  function indexController ($state, Show) {
+  function indexController ($state, Show, authService) {
     this.shows = Show.query()
     this.newShow = new Show()
     this.create = function () {
@@ -64,6 +77,11 @@ angular
         $state.go("show", { name: show.name} )
       })
     }
+    var vm = this
+    vm.authService = authService
+    authService.getProfileDeferred().then(function (profile) {
+    vm.user = profile;
+    });
   }
 
   function showController ($state, $stateParams, Show) {
@@ -80,4 +98,5 @@ angular
         $state.go("index")
       })
     }
-  }
+}
+})();
