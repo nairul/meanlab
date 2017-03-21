@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div ng-if="!isAuthenticated">
 <a href="javascript:;" ng-click="vm.authService.login()">Log In</a>
 </div>
@@ -5,9 +6,11 @@
 <a href="javascript:;" ng-click="vm.authService.logout()">Log out</a>
 </div>
 
-<div class="shows" data-ng-repeat="show in vm.shows | orderBy : '-vote'">
+<!-- <h2>{{vm.shows.length}} Shows</h2> -->
+<div data-ng-repeat="show in vm.shows | orderBy : '-vote'" style="background-image:url({{show.image}})"  class="shows" >
     <a data-ui-sref="show({name: show.name})">{{show.name}}</a>
 </div>
+
 <br>
 <form ng-submit="vm.create()">
   <input type="text" ng-model="vm.newShow.name" placeholder="Name" />
