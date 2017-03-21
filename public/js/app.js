@@ -43,6 +43,7 @@ angular
     "$state",
     "$stateParams",
     "Show",
+    "authService",
     showController
   ])
 
@@ -60,7 +61,7 @@ angular
         controller: "showCtrl",
         controllerAs: "vm"
       })
-  
+
   }
 
   function Show ($resource) {
@@ -84,7 +85,7 @@ angular
     });
   }
 
-  function showController ($state, $stateParams, Show) {
+  function showController ($state, $stateParams, Show, authService) {
     this.show = Show.get({name: $stateParams.name})
     this.vote = function () {
       this.show.vote += 1
@@ -98,5 +99,10 @@ angular
         $state.go("index")
       })
     }
+    var vm = this
+    vm.authService = authService
+    authService.getProfileDeferred().then(function (profile) {
+    vm.user = profile;
+    });
 }
 })();

@@ -7,6 +7,10 @@
 .nav {
   background: #2C2E2F;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .nav ul {
@@ -47,7 +51,8 @@ a.ng-binding {
   text-align: center;
   text-decoration: none;
   background: black;
-  padding: 30px;
+  padding: 20px;
+  transform: scale(2, 2)
 
 }
 
