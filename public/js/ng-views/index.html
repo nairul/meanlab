@@ -1,10 +1,16 @@
-<<<<<<< HEAD
-<div ng-if="!isAuthenticated">
-<a href="javascript:;" ng-click="vm.authService.login()">Log In</a>
+<div class="nav">
+  <ul>
+    <li><a href="#/shows">Vote Funny</a></li>
+    <li><div ng-if="!isAuthenticated">
+    <a href="javascript:;" ng-click="vm.authService.login()">Log In</a>
+    </div>
+    <div ng-if="isAuthenticated">
+    <a href="javascript:;" ng-click="vm.authService.logout()">Log out</a>
+    </div>
+    </li>
+  </ul>
 </div>
-<div ng-if="isAuthenticated">
-<a href="javascript:;" ng-click="vm.authService.logout()">Log out</a>
-</div>
+
 
 <!-- <h2>{{vm.shows.length}} Shows</h2> -->
 <div data-ng-repeat="show in vm.shows | orderBy : '-vote'" style="background-image:url({{show.image}})"  class="shows" >
@@ -12,6 +18,7 @@
 </div>
 
 <br>
+<p>ADD A NEW SHOW</p>
 <form ng-submit="vm.create()">
   <input type="text" ng-model="vm.newShow.name" placeholder="Name" />
   <input type="text" ng-model="vm.newShow.url" placeholder="URL" />
