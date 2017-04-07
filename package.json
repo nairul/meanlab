@@ -1,7 +1,7 @@
 {
-  "name": "meanlab",
+  "name": "Comedy Central Presents — Vote Funny",
   "version": "1.0.0",
-  "description": "Rodney and Adam's MEAN Lab",
+  "description": "Vote Funny is a website that allows users to vote for their favorite Comedy Central TV shows.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
